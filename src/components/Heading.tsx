@@ -16,12 +16,12 @@ const Heading: React.FC<HeadingProps> = ({
   const baseStyles = "font-bold font-sans leading-tight";
 
   const variantStyles = {
-    h1: "text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
-    h2: "text-3xl md:text-4xl lg:text-5xl xl:text-6xl",
-    h3: "text-2xl md:text-3xl lg:text-4xl xl:text-5xl",
-    h4: "text-xl md:text-2xl lg:text-3xl xl:text-4xl",
-    h5: "text-lg md:text-xl lg:text-2xl xl:text-3xl",
-    h6: "text-base md:text-lg lg:text-xl xl:text-2xl",
+    h1: "text-4xl font-normal md:text-5xl",
+    h2: "text-3xl font-normal md:text-4xl lg:text-5xl",
+    h3: "text-2xl font-normal md:text-3xl lg:text-4xl",
+    h4: "text-xl font-normal md:text-2xl lg:text-3xl",
+    h5: "text-lg font-normal md:text-xl lg:text-2xl",
+    h6: "text-base font-normal md:text-lg lg:text-xl",
   };
 
   const renderHeading = () => {
