@@ -6,13 +6,13 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap gap-6 text-footer-link justify-center my-2">
           <a
-            href="#"
+            href="/PrivacyPolicy"
             className="text-footer-link hover:text-gray-200 transition-colors"
           >
             Privacy Policy
           </a>
           <a
-            href="#"
+            href="/TermsAndConditions"
             className="text-footer-link hover:text-gray-200 transition-colors"
           >
             Terms of Service

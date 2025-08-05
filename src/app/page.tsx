@@ -54,7 +54,7 @@ const artistFeatures = [
 // Figma-accurate blob configurations with 4K responsive scaling
 const blobConfigs = {
   primary: {
-    className: "opacity-10",
+    className: "opacity-[0.08]",
     style: {
       width: "738.076127882232px",
       height: "528.4411916469799px",
@@ -63,7 +63,7 @@ const blobConfigs = {
     },
   },
   primaryAlt: {
-    className: "opacity-5",
+    className: "opacity-[0.08]",
     style: {
       width: "738.076127882232px",
       height: "528.4411916469799px",
@@ -72,7 +72,7 @@ const blobConfigs = {
     },
   },
   purple: {
-    className: "opacity-10",
+    className: "opacity-[0.08]",
     style: {
       width: "351.35442718046244px",
       height: "354.8220785084499px",
@@ -82,7 +82,7 @@ const blobConfigs = {
     },
   },
   white: {
-    className: "opacity-15",
+    className: "opacity-[0.08]",
     style: {
       width: "922px",
       height: "922px",
@@ -91,7 +91,7 @@ const blobConfigs = {
     },
   },
   large: {
-    className: "opacity-5",
+    className: "opacity-[0.08]",
     style: {
       width: "550.4999968227481px",
       height: "933.7499946107921px",
@@ -109,7 +109,7 @@ const BackgroundBlobs = memo(() => (
       className={blobConfigs.primary.className}
       style={{
         ...blobConfigs.primary.style,
-        top: "-44px",
+        top: "-120px",
         left: "-285px",
         transform: "rotate(0deg)",
         zIndex: 1,
