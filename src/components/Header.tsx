@@ -13,7 +13,9 @@ export default function Header() {
               width={130}
               height={58}
               alt="AudioVal Logo"
-            // className="w-24 sm:w-28 lg:w-32 xl:w-36 2xl:w-40 h-auto"
+              priority
+              className="w-auto h-8 sm:h-10 lg:h-12"
+              sizes="(max-width: 640px) 104px, (max-width: 1024px) 120px, 130px"
             />
           </Link>
         </div>

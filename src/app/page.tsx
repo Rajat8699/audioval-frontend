@@ -131,6 +131,7 @@ const HeroSection = memo(() => (
                 alt="AudioVal - Best Music App for Independent Artists with Free Offline Downloads"
                 priority
                 className="w-full h-auto"
+                sizes="(max-width: 640px) 320px, (max-width: 1024px) 384px, 400px"
               />
             </div>
           </div>
@@ -154,7 +155,7 @@ const HowItWorksSection = memo(() => (
       </div>
 
       {/* Cards Container */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 lg:gap-6 xl:gap-8 2xl:gap-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-6 xl:gap-8 2xl:gap-12">
         <FeatureCard title={SECTION_TITLES.forListeners} features={LISTENER_FEATURES} />
         <FeatureCard title={SECTION_TITLES.forArtists} features={ARTIST_FEATURES} />
       </div>

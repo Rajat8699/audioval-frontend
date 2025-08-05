@@ -16,23 +16,29 @@ export const BUSINESS_INFO = {
 export const FAQ_DATA = [
   {
     question: "How do artists get paid?",
-    answer: "Artists earn 70% of ad revenue from their songs and get paid quickly through Stripe once their song goes live on Drop Day.",
+    answer:
+      "Artists earn 70% of ad revenue from their songs and get paid quickly through Stripe once their song goes live on Drop Day.",
   },
   {
     question: "What makes AudioVal different?",
-    answer: "We focus on quality, not quantity — only one song upload every dropday to give every artist the spotlight. Plus, artists earn way more than on other platforms.",
+    answer:
+      "We focus on quality, not quantity — only one song upload every dropday to give every artist the spotlight. Plus, artists earn way more than on other platforms.",
   },
   {
     question: "Can I listen without ads?",
-    answer: "Once you unlock a song after the ad, you can listen to it ad-free anytime, online or offline. We're also working on a premium version for completely ad-free listening across the app.",
+    answer:
+      "Once you unlock a song after the ad, you can listen to it ad-free anytime, online or offline. We're also working on a premium version for completely ad-free listening across the app.",
   },
   {
     question: "What is Drop Day?",
-    answer: "Drop Day is a special, scheduled date set by the CEO when all newly uploaded songs—limited to one per artist—are released together, getting maximum attention on the app's dedicated section until the next scheduled release.",
+    answer:
+      "Drop Day is a special, scheduled date set by the CEO when all newly uploaded songs—limited to one per artist—are released together, getting maximum attention on the app's dedicated section until the next scheduled release.",
   },
   {
-    question: "How does AudioVal ensure music quality and copyright compliance?",
-    answer: "Our dedicated curation team carefully reviews every submitted song to maintain the high-quality listening experience AudioVal promises. We also perform copyright checks to ensure all tracks are original or properly licensed before they appear on Drop Day.",
+    question:
+      "How does AudioVal ensure music quality and copyright compliance?",
+    answer:
+      "Our dedicated curation team carefully reviews every submitted song to maintain the high-quality listening experience AudioVal promises. We also perform copyright checks to ensure all tracks are original or properly licensed before they appear on Drop Day.",
   },
 ] as const;
 
@@ -55,7 +61,8 @@ export const ARTIST_FEATURES = [
 // Hero Section Content
 export const HERO_CONTENT = {
   title: "Where Every Drop Resonates",
-  subtitle: "Artists upload only one song per Drop Day, ensuring each track gets the moment it deserves.",
+  subtitle:
+    "Artists upload only one song per Drop Day, ensuring each track gets the moment it deserves.",
   downloadText: "Download the App",
 } as const;
 
@@ -69,7 +76,8 @@ export const SECTION_TITLES = {
 
 // CTA Text
 export const CTA_TEXT = {
-  submitSong: "Submit your song for review, then get paid when it goes live on Drop Day.",
+  submitSong:
+    "Submit your song for review, then get paid when it goes live on Drop Day.",
 } as const;
 
 // Background Blob Configurations
@@ -147,12 +155,14 @@ export const PRIVACY_POLICY_SECTIONS = [
   {
     title: "3. Sharing Your Info",
     icon: "🤝",
-    content: "We do not sell your data. We only share with trusted third parties (e.g., Stripe for payments, analytics providers) to help us operate our service.",
+    content:
+      "We do not sell your data. We only share with trusted third parties (e.g., Stripe for payments, analytics providers) to help us operate our service.",
   },
   {
     title: "4. Cookies & Tracking",
     icon: "🍪",
-    content: "We use basic cookies or tracking tools (like Google Analytics) to understand site usage. You can disable cookies in your browser if you prefer.",
+    content:
+      "We use basic cookies or tracking tools (like Google Analytics) to understand site usage. You can disable cookies in your browser if you prefer.",
   },
   {
     title: "5. Your Rights",
@@ -167,7 +177,8 @@ export const PRIVACY_POLICY_SECTIONS = [
   {
     title: "6. Security",
     icon: "🔐",
-    content: "We implement reasonable measures to protect your data but cannot guarantee 100% security.",
+    content:
+      "We implement reasonable measures to protect your data but cannot guarantee 100% security.",
   },
   {
     title: "7. Children's Privacy",
@@ -177,7 +188,8 @@ export const PRIVACY_POLICY_SECTIONS = [
   {
     title: "8. Changes",
     icon: "📝",
-    content: "We may update this Privacy Policy as needed. We'll notify users of major changes.",
+    content:
+      "We may update this Privacy Policy as needed. We'll notify users of major changes.",
   },
 ] as const;
 
@@ -186,12 +198,14 @@ export const TERMS_AND_CONDITIONS_SECTIONS = [
   {
     title: "1. Use of the Platform",
     icon: "🎵",
-    content: "You agree to use AudioVal for personal, non-commercial purposes unless you are an artist uploading your own content. You must comply with all applicable laws and these Terms.",
+    content:
+      "You agree to use AudioVal for personal, non-commercial purposes unless you are an artist uploading your own content. You must comply with all applicable laws and these Terms.",
   },
   {
     title: "2. Account Registration",
     icon: "👤",
-    content: "To use certain features, you may need to register and create an account. You are responsible for maintaining the confidentiality of your login information.",
+    content:
+      "To use certain features, you may need to register and create an account. You are responsible for maintaining the confidentiality of your login information.",
   },
   {
     title: "3. User Content",
@@ -201,27 +215,32 @@ export const TERMS_AND_CONDITIONS_SECTIONS = [
       "You own the rights to it or have permission to distribute it.",
       "It does not infringe on any copyright, trademark, or other legal rights.",
     ],
-    additionalContent: "AudioVal reserves the right to reject or remove content that violates these rules.",
+    additionalContent:
+      "AudioVal reserves the right to reject or remove content that violates these rules.",
   },
   {
     title: "4. Payment to Artists",
     icon: "💰",
-    content: "Artists earn 70% of ad revenue generated from their songs. Payouts are processed via Stripe, subject to Stripe's own terms and conditions.",
+    content:
+      "Artists earn 70% of ad revenue generated from their songs. Payouts are processed via Stripe, subject to Stripe's own terms and conditions.",
   },
   {
     title: "5. Intellectual Property",
     icon: "⚖️",
-    content: "All trademarks, logos, and content on AudioVal (excluding user-submitted songs) are the property of AudioVal. You may not copy, reproduce, or distribute any part of our platform without permission.",
+    content:
+      "All trademarks, logos, and content on AudioVal (excluding user-submitted songs) are the property of AudioVal. You may not copy, reproduce, or distribute any part of our platform without permission.",
   },
   {
     title: "6. Termination",
     icon: "🚫",
-    content: "We may suspend or terminate access to AudioVal at any time if you violate these terms or for any other reason.",
+    content:
+      "We may suspend or terminate access to AudioVal at any time if you violate these terms or for any other reason.",
   },
   {
     title: "7. Changes",
     icon: "📝",
-    content: "We reserve the right to modify these terms at any time. Continued use of AudioVal constitutes acceptance of those changes.",
+    content:
+      "We reserve the right to modify these terms at any time. Continued use of AudioVal constitutes acceptance of those changes.",
   },
 ] as const;
 
@@ -268,4 +287,4 @@ export const VIDEO_DATA = {
     videoUrl: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
     title: "Watch how audio creators grow their audience",
   },
-} as const; 
+} as const;
