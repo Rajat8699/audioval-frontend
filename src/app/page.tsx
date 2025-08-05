@@ -11,28 +11,28 @@ const faqData = [
   {
     question: "How do artists get paid?",
     answer:
-      "Artists earn 70% of ad revenue based on their total song unlocks each month. Paid monthly through Stripe. A song becomes eligible for earnings once it goes live on Drop Day. Artists must earn a minimum of $10 to receive a payout",
+      "Artists earn 70% of ad revenue from their songs and get paid quickly through Stripe once their song goes live on Drop Day.",
   },
   {
     question: "What makes AudioVal different?",
     answer:
-      "AudioVal focuses on the Drop Day concept where artists upload only one song per day, ensuring each track gets the attention it deserves. We offer higher revenue sharing and a unique discovery experience.",
+      "We focus on quality, not quantity — only one song upload every dropday to give every artist the spotlight. Plus, artists earn way more than on other platforms.",
   },
   {
     question: "Can I listen without ads?",
     answer:
-      "Yes! Once you unlock a track, you can listen to it without any ads. The unlock system ensures that artists get compensated while providing listeners with an ad-free experience for their favorite songs.",
+      "Once you unlock a song after the ad, you can listen to it ad-free anytime, online or offline. We’re also working on a premium version for completely ad-free listening across the app.",
   },
   {
     question: "What is Drop Day?",
     answer:
-      "Drop Day is our unique system where artists can upload one song per day. This creates a curated, focused listening experience where each track gets its moment to shine and listeners can discover new music intentionally.",
+      "Drop Day is a special, scheduled date set by the CEO when all newly uploaded songs—limited to one per artist—are released together, getting maximum attention on the app’s dedicated section until the next scheduled release .",
   },
   {
     question:
       "How does AudioVal ensure music quality and copyright compliance?",
     answer:
-      "All songs go through a review process before going live on Drop Day. We have strict quality standards and copyright compliance measures to ensure only original, high-quality content reaches our listeners.",
+      "Our dedicated curation team carefully reviews every submitted song to maintain the high-quality listening experience AudioVal promises. We also perform copyright checks to ensure all tracks are original or properly licensed before they appear on Drop Day.",
   },
 ];
 
