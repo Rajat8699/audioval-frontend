@@ -1,14 +1,14 @@
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 // Performance optimization utilities
 export const performanceUtils = {
   // Debounce function for performance optimization
-  debounce: <T extends (...args: any[]) => any>(
+  debounce: <T extends (...args: unknown[]) => unknown>(
     func: T,
     wait: number
   ): ((...args: Parameters<T>) => void) => {
@@ -20,7 +20,7 @@ export const performanceUtils = {
   },
 
   // Throttle function for performance optimization
-  throttle: <T extends (...args: any[]) => any>(
+  throttle: <T extends (...args: unknown[]) => unknown>(
     func: T,
     limit: number
   ): ((...args: Parameters<T>) => void) => {
@@ -35,8 +35,8 @@ export const performanceUtils = {
   },
 
   // Memoization helper
-  memoize: <T extends (...args: any[]) => any>(fn: T): T => {
-    const cache = new Map();
+  memoize: <T extends (...args: unknown[]) => unknown>(fn: T): T => {
+    const cache = new Map<string, unknown>();
     return ((...args: Parameters<T>) => {
       const key = JSON.stringify(args);
       if (cache.has(key)) {
@@ -52,7 +52,7 @@ export const performanceUtils = {
 // SEO and accessibility utilities
 export const seoUtils = {
   // Generate structured data for better SEO
-  generateStructuredData: (data: any) => {
+  generateStructuredData: (data: Record<string, unknown>) => {
     return JSON.stringify({
       "@context": "https://schema.org",
       ...data,
@@ -61,13 +61,16 @@ export const seoUtils = {
 
   // Generate meta description
   generateMetaDescription: (text: string, maxLength: number = 160) => {
-    return text.length > maxLength 
-      ? text.substring(0, maxLength - 3) + "..." 
+    return text.length > maxLength
+      ? text.substring(0, maxLength - 3) + "..."
       : text;
   },
 
   // Generate canonical URL
-  generateCanonicalUrl: (path: string, baseUrl: string = "https://audioval.com") => {
+  generateCanonicalUrl: (
+    path: string,
+    baseUrl: string = "https://audioval.com"
+  ) => {
     return `${baseUrl}${path.startsWith("/") ? path : `/${path}`}`;
   },
 } as const;
@@ -75,10 +78,12 @@ export const seoUtils = {
 // Image optimization utilities
 export const imageUtils = {
   // Generate responsive image sizes
-  generateImageSizes: (maxWidth: number, breakpoints: number[] = [640, 1024, 1920]) => {
+  generateImageSizes: (
+    maxWidth: number,
+    breakpoints: number[] = [640, 1024, 1920]
+  ) => {
     const sizes = breakpoints
-      .map((bp, index) => {
-        const nextBp = breakpoints[index + 1];
+      .map((bp) => {
         const width = Math.min(maxWidth, bp);
         return `(max-width: ${bp}px) ${width}px`;
       })
