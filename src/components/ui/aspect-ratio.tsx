@@ -1,11 +1,21 @@
-"use client"
+"use client";
 
-import * as AspectRatioPrimitive from "@radix-ui/react-aspect-ratio"
+import * as AspectRatioPrimitive from "@radix-ui/react-aspect-ratio";
+import { cn } from "@/lib/utils";
 
-function AspectRatio({
-  ...props
-}: React.ComponentProps<typeof AspectRatioPrimitive.Root>) {
-  return <AspectRatioPrimitive.Root data-slot="aspect-ratio" {...props} />
+interface AspectRatioProps
+  extends React.ComponentProps<typeof AspectRatioPrimitive.Root> {
+  className?: string;
 }
 
-export { AspectRatio }
+function AspectRatio({ className, ...props }: AspectRatioProps) {
+  return (
+    <AspectRatioPrimitive.Root
+      data-slot="aspect-ratio"
+      className={cn("w-full overflow-hidden", className)}
+      {...props}
+    />
+  );
+}
+
+export { AspectRatio };
