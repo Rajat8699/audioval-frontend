@@ -17,16 +17,15 @@ interface FAQItem {
 
 interface FAQSectionProps {
   title: string;
-  faqData: FAQItem[];
+  faqData: readonly FAQItem[];
   className?: string;
 }
 
 const FAQSection = memo<FAQSectionProps>(({ title, faqData, className }) => {
   return (
     <section
-      className={`relative py-4 sm:py-6 lg:py-8 xl:py-10 2xl:py-12 overflow-hidden ${
-        className || ""
-      }`}
+      className={`relative py-4 sm:py-6 lg:py-8 xl:py-10 2xl:py-12 overflow-hidden ${className || ""
+        }`}
     >
       <div className="relative z-10 container-responsive">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 lg:gap-6 xl:gap-8 2xl:gap-12 items-start justify-center">

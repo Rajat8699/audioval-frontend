@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ASSETS } from "@/lib/constants";
 
 export default function Header() {
   return (
@@ -8,7 +9,7 @@ export default function Header() {
         <div className="flex justify-center">
           <Link href="/">
             <Image
-              src="/assets/Logo.png"
+              src={ASSETS.logo}
               width={130}
               height={58}
               alt="AudioVal Logo"

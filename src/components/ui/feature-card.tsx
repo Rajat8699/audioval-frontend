@@ -10,7 +10,7 @@ import Text from "@/components/Text";
 
 interface FeatureCardProps {
   title: string;
-  features: string[];
+  features: readonly string[];
   videoUrl?: string;
   className?: string;
 }

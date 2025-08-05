@@ -1,4 +1,5 @@
 import React from "react";
+import { CONTACT_INFO, NAVIGATION_LINKS, SOCIAL_LINKS } from "@/lib/constants";
 
 const Footer: React.FC = () => {
   return (
@@ -6,29 +7,29 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap gap-6 text-footer-link justify-center my-2">
           <a
-            href="/PrivacyPolicy"
+            href={NAVIGATION_LINKS.privacyPolicy}
             className="text-footer-link hover:text-gray-200 transition-colors"
           >
             Privacy Policy
           </a>
           <a
-            href="/TermsAndConditions"
+            href={NAVIGATION_LINKS.termsAndConditions}
             className="text-footer-link hover:text-gray-200 transition-colors"
           >
             Terms of Service
           </a>
           <a
-            href="mailto:info@audioval.com"
+            href={`mailto:${CONTACT_INFO.email}`}
             className="text-footer-link hover:text-gray-200 transition-colors"
           >
-            info@audioval.com
+            {CONTACT_INFO.email}
           </a>
         </div>
 
         {/* Center - Social Media Icons */}
         <div className="flex gap-4 justify-center py-2">
           <a
-            href="#"
+            href={SOCIAL_LINKS.youtube}
             className="text-footer-link hover:text-gray-200 transition-colors"
           >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -36,7 +37,7 @@ const Footer: React.FC = () => {
             </svg>
           </a>
           <a
-            href="#"
+            href={SOCIAL_LINKS.discord}
             className="text-footer-link hover:text-gray-200 transition-colors"
           >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -44,7 +45,7 @@ const Footer: React.FC = () => {
             </svg>
           </a>
           <a
-            href="#"
+            href={SOCIAL_LINKS.pinterest}
             className="text-footer-link hover:text-gray-200 transition-colors"
           >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -52,7 +53,7 @@ const Footer: React.FC = () => {
             </svg>
           </a>
           <a
-            href="#"
+            href={SOCIAL_LINKS.twitter}
             className="text-footer-link hover:text-gray-200 transition-colors"
           >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -60,7 +61,7 @@ const Footer: React.FC = () => {
             </svg>
           </a>
           <a
-            href="#"
+            href={SOCIAL_LINKS.facebook}
             className="text-footer-link hover:text-gray-200 transition-colors"
           >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -71,7 +72,7 @@ const Footer: React.FC = () => {
 
         {/* Copyright */}
         <div className="text-center mt-2 text-footer-link">
-          <p>© Copyright 2025 - Audioval.</p>
+          <p>{CONTACT_INFO.copyright}</p>
         </div>
       </div>
     </footer>

@@ -6,109 +6,25 @@ import { AppStoreButton } from "@/components/ui/app-store-button";
 import { FeatureCard } from "@/components/ui/feature-card";
 import { FAQSection } from "@/components/FAQSection";
 import { memo } from "react";
-
-const faqData = [
-  {
-    question: "How do artists get paid?",
-    answer:
-      "Artists earn 70% of ad revenue from their songs and get paid quickly through Stripe once their song goes live on Drop Day.",
-  },
-  {
-    question: "What makes AudioVal different?",
-    answer:
-      "We focus on quality, not quantity — only one song upload every dropday to give every artist the spotlight. Plus, artists earn way more than on other platforms.",
-  },
-  {
-    question: "Can I listen without ads?",
-    answer:
-      "Once you unlock a song after the ad, you can listen to it ad-free anytime, online or offline. We’re also working on a premium version for completely ad-free listening across the app.",
-  },
-  {
-    question: "What is Drop Day?",
-    answer:
-      "Drop Day is a special, scheduled date set by the CEO when all newly uploaded songs—limited to one per artist—are released together, getting maximum attention on the app’s dedicated section until the next scheduled release .",
-  },
-  {
-    question:
-      "How does AudioVal ensure music quality and copyright compliance?",
-    answer:
-      "Our dedicated curation team carefully reviews every submitted song to maintain the high-quality listening experience AudioVal promises. We also perform copyright checks to ensure all tracks are original or properly licensed before they appear on Drop Day.",
-  },
-];
-
-const listenerFeatures = [
-  "Discover new music on Drop Day",
-  "Listen offline or online",
-  "Get personalized recommendations",
-  "Unlock full tracks after previewing",
-  "No more ads after you unlock a song",
-];
-
-const artistFeatures = [
-  "Upload one song per Drop Day",
-  "Earn up to 10x more than Spotify",
-  "Keep 70% of ad revenue",
-  "Paid fast through Stripe",
-];
-
-// Figma-accurate blob configurations with 4K responsive scaling
-const blobConfigs = {
-  primary: {
-    className: "opacity-[0.08]",
-    style: {
-      width: "738.076127882232px",
-      height: "528.4411916469799px",
-      background: "#6FA8DC",
-      filter: "blur(30px)",
-    },
-  },
-  primaryAlt: {
-    className: "opacity-[0.08]",
-    style: {
-      width: "738.076127882232px",
-      height: "528.4411916469799px",
-      background: "#6FA8DC",
-      filter: "blur(30px)",
-    },
-  },
-  purple: {
-    className: "opacity-[0.08]",
-    style: {
-      width: "351.35442718046244px",
-      height: "354.8220785084499px",
-      background: "radial-gradient(circle, #C7C7D9 85.1%, transparent 100%)",
-      filter: "blur(30px)",
-      zIndex: 10,
-    },
-  },
-  white: {
-    className: "opacity-[0.08]",
-    style: {
-      width: "922px",
-      height: "922px",
-      background: "#FFFFFF",
-      filter: "blur(50px)",
-    },
-  },
-  large: {
-    className: "opacity-[0.08]",
-    style: {
-      width: "550.4999968227481px",
-      height: "933.7499946107921px",
-      background: "#6FA8DC",
-      filter: "blur(30px)",
-    },
-  },
-};
+import {
+  FAQ_DATA,
+  LISTENER_FEATURES,
+  ARTIST_FEATURES,
+  BLOB_CONFIGS,
+  HERO_CONTENT,
+  SECTION_TITLES,
+  CTA_TEXT,
+  ASSETS
+} from "@/lib/constants";
 
 // Memoized background blobs for better performance
 const BackgroundBlobs = memo(() => (
   <>
     {/* Top Left - Primary */}
     <BackgroundBlob
-      className={blobConfigs.primary.className}
+      className={BLOB_CONFIGS.primary.className}
       style={{
-        ...blobConfigs.primary.style,
+        ...BLOB_CONFIGS.primary.style,
         top: "-120px",
         left: "-285px",
         transform: "rotate(0deg)",
@@ -117,9 +33,9 @@ const BackgroundBlobs = memo(() => (
     />
     {/* Top Right - White */}
     <BackgroundBlob
-      className={blobConfigs.white.className}
+      className={BLOB_CONFIGS.white.className}
       style={{
-        ...blobConfigs.white.style,
+        ...BLOB_CONFIGS.white.style,
         top: "-100px",
         left: "650px",
         transform: "rotate(0deg)",
@@ -128,9 +44,9 @@ const BackgroundBlobs = memo(() => (
     />
     {/* Below Top Left - Purple */}
     <BackgroundBlob
-      className={blobConfigs.purple.className}
+      className={BLOB_CONFIGS.purple.className}
       style={{
-        ...blobConfigs.purple.style,
+        ...BLOB_CONFIGS.purple.style,
         top: "678.25px",
         left: "-141.75px",
         transform: "rotate(-88.76deg)",
@@ -139,9 +55,9 @@ const BackgroundBlobs = memo(() => (
     />
     {/* Below Top Right - Large */}
     <BackgroundBlob
-      className={blobConfigs.large.className}
+      className={BLOB_CONFIGS.large.className}
       style={{
-        ...blobConfigs.large.style,
+        ...BLOB_CONFIGS.large.style,
         top: "563px",
         left: "925px",
         transform: "rotate(75deg)",
@@ -150,9 +66,9 @@ const BackgroundBlobs = memo(() => (
     />
     {/* 2nd Below Top Left - PrimaryAlt */}
     <BackgroundBlob
-      className={blobConfigs.primaryAlt.className}
+      className={BLOB_CONFIGS.primaryAlt.className}
       style={{
-        ...blobConfigs.primaryAlt.style,
+        ...BLOB_CONFIGS.primaryAlt.style,
         top: "712.5px",
         left: "-196px",
         transform: "rotate(0deg)",
@@ -173,12 +89,11 @@ const HeroSection = memo(() => (
         <div className="space-y-2 sm:space-y-3 lg:space-y-4 xl:space-y-6 2xl:space-y-8 col-span-2">
           <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 xl:space-y-4">
             <Heading variant="h1" className="text-primary">
-              Where Every Drop Resonates
+              {HERO_CONTENT.title}
             </Heading>
 
             <Text variant="paragraph" className="text-white">
-              Artists upload only one song per Drop Day, ensuring each track
-              gets the moment it deserves.
+              {HERO_CONTENT.subtitle}
             </Text>
           </div>
 
@@ -187,7 +102,7 @@ const HeroSection = memo(() => (
               variant="paragraph"
               className="text-white font-semibold mb-1.5 sm:mb-2"
             >
-              Download the App
+              {HERO_CONTENT.downloadText}
             </Text>
             <div className="flex gap-2">
               <AppStoreButton platform="google" />
@@ -201,7 +116,7 @@ const HeroSection = memo(() => (
           <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl">
             <div className="relative z-10">
               <Image
-                src="/assets/HeroImage.png"
+                src={ASSETS.heroImage}
                 width={400}
                 height={400}
                 alt="audioval-image"
@@ -225,21 +140,20 @@ const HowItWorksSection = memo(() => (
       {/* Section Header */}
       <div className="text-center mb-4 sm:mb-6 lg:mb-8 xl:mb-12 2xl:mb-16">
         <Heading variant="h1" className="text-primary">
-          How It Works
+          {SECTION_TITLES.howItWorks}
         </Heading>
       </div>
 
       {/* Cards Container */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 lg:gap-6 xl:gap-8 2xl:gap-12">
-        <FeatureCard title="For Listeners" features={listenerFeatures} />
-        <FeatureCard title="For Artists" features={artistFeatures} />
+        <FeatureCard title={SECTION_TITLES.forListeners} features={LISTENER_FEATURES} />
+        <FeatureCard title={SECTION_TITLES.forArtists} features={ARTIST_FEATURES} />
       </div>
 
       {/* Bottom CTA */}
       <div className="text-center mt-4 sm:mt-6 lg:mt-8 xl:mt-12 2xl:mt-16">
         <Text variant="paragraph" className="text-gray-300">
-          Submit your song for review, then get paid when it goes live on Drop
-          Day.
+          {CTA_TEXT.submitSong}
         </Text>
       </div>
     </div>
@@ -260,7 +174,7 @@ export default function Home() {
         style={{ backgroundPosition: "center -70px" }}
       >
         <HowItWorksSection />
-        <FAQSection title="Frequently Asked Questions" faqData={faqData} />
+        <FAQSection title={SECTION_TITLES.faq} faqData={FAQ_DATA} />
       </div>
     </main>
   );
