@@ -16,6 +16,15 @@ import {
   CTA_TEXT,
   ASSETS
 } from "@/lib/constants";
+import type { Metadata } from "next";
+import { generateMetadata, SEO_HELPERS, generateWebsiteStructuredData, generateFAQStructuredData } from "@/lib/seo";
+
+export const metadata: Metadata = generateMetadata({
+  title: SEO_HELPERS.home.title,
+  description: SEO_HELPERS.home.description,
+  keywords: SEO_HELPERS.home.keywords,
+  path: SEO_HELPERS.home.path,
+});
 
 // Memoized background blobs for better performance
 const BackgroundBlobs = memo(() => (
@@ -119,7 +128,7 @@ const HeroSection = memo(() => (
                 src={ASSETS.heroImage}
                 width={400}
                 height={400}
-                alt="audioval-image"
+                alt="AudioVal - Best Music App for Independent Artists with Free Offline Downloads"
                 priority
                 className="w-full h-auto"
               />
@@ -164,18 +173,36 @@ HowItWorksSection.displayName = "HowItWorksSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col relative overflow-hidden">
-      <BackgroundBlobs />
+    <>
+      {/* Structured Data for Homepage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateWebsiteStructuredData())
+        }}
+      />
 
-      <HeroSection />
+      {/* FAQ Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFAQStructuredData(FAQ_DATA))
+        }}
+      />
 
-      <div
-        className="px-3 sm:px-4 lg:px-6 xl:px-8 2xl:px-12 pt-2 sm:pt-4 lg:pt-6 xl:pt-8 2xl:pt-12 bg-[url('/assets/backGrid.png')] bg-cover bg-center"
-        style={{ backgroundPosition: "center -70px" }}
-      >
-        <HowItWorksSection />
-        <FAQSection title={SECTION_TITLES.faq} faqData={FAQ_DATA} />
-      </div>
-    </main>
+      <main className="min-h-screen flex flex-col relative overflow-hidden">
+        <BackgroundBlobs />
+
+        <HeroSection />
+
+        <div
+          className="px-3 sm:px-4 lg:px-6 xl:px-8 2xl:px-12 pt-2 sm:pt-4 lg:pt-6 xl:pt-8 2xl:pt-12 bg-[url('/assets/backGrid.png')] bg-cover bg-center"
+          style={{ backgroundPosition: "center -70px" }}
+        >
+          <HowItWorksSection />
+          <FAQSection title={SECTION_TITLES.faq} faqData={FAQ_DATA} />
+        </div>
+      </main>
+    </>
   );
 }

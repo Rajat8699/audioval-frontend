@@ -227,8 +227,8 @@ export const TERMS_AND_CONDITIONS_SECTIONS = [
 
 // Navigation Links
 export const NAVIGATION_LINKS = {
-  privacyPolicy: "/PrivacyPolicy",
-  termsAndConditions: "/TermsAndConditions",
+  privacyPolicy: "/privacy-policy",
+  termsAndConditions: "/terms-and-conditions",
 } as const;
 
 // Asset Paths
