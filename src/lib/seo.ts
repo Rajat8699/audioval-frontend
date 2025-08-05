@@ -92,7 +92,6 @@ export function generateMetadata({
   image = SEO_CONFIG.defaultImage,
   imageAlt = SEO_CONFIG.defaultImageAlt,
   type = "website",
-  structuredData = null,
 }: {
   title: string;
   description: string;
@@ -101,7 +100,6 @@ export function generateMetadata({
   image?: string;
   imageAlt?: string;
   type?: "website" | "article";
-  structuredData?: any;
 }): Metadata {
   const fullTitle = title.includes("AudioVal")
     ? title
