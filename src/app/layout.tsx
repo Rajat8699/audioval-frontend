@@ -11,12 +11,31 @@ const raleway = Raleway({
   display: "swap",
 });
 
-export const metadata: Metadata = generateMetadata({
-  title: SEO_HELPERS.home.title,
-  description: SEO_HELPERS.home.description,
-  keywords: SEO_HELPERS.home.keywords,
-  path: SEO_HELPERS.home.path,
-});
+export const metadata: Metadata = {
+  ...generateMetadata({
+    title: SEO_HELPERS.home.title,
+    description: SEO_HELPERS.home.description,
+    keywords: SEO_HELPERS.home.keywords,
+    path: SEO_HELPERS.home.path,
+  }),
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/assets/Logo.png",
+  },
+  manifest: "/manifest.json",
+  other: {
+    "theme-color": "#6FA8DC",
+    "msapplication-TileColor": "#6FA8DC",
+    "application-name": "AudioVal",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "apple-mobile-web-app-title": "AudioVal",
+    "mobile-web-app-capable": "yes",
+    "msapplication-config": "/browserconfig.xml",
+    "msapplication-TileImage": "/assets/Logo.png",
+    "msapplication-tap-highlight": "no",
+  },
+};
 
 export default function RootLayout({
   children,
@@ -25,29 +44,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/assets/Logo.png" />
-        <meta name="theme-color" content="#6FA8DC" />
-        <meta name="msapplication-TileColor" content="#6FA8DC" />
-        <meta name="application-name" content="AudioVal" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="AudioVal" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="msapplication-config" content="/browserconfig.xml" />
-        <meta name="msapplication-TileImage" content="/assets/Logo.png" />
-        <meta name="msapplication-tap-highlight" content="no" />
-
-        {/* Structured Data for Music App */}
+      <body className={`${raleway.variable} antialiased`}>
+        {/* Structured Data for Music App - SSR compatible */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(generateAppStructuredData())
           }}
         />
-      </head>
-      <body className={`${raleway.variable} antialiased`}>
         <Header />
         {children}
         <Footer />

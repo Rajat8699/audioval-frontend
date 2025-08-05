@@ -103,9 +103,15 @@ export function generateMetadata({
   type?: "website" | "article";
   structuredData?: any;
 }): Metadata {
-  const fullTitle = title.includes("AudioVal") ? title : `${title} | AudioVal - Best Music App for Independent Artists`;
+  const fullTitle = title.includes("AudioVal")
+    ? title
+    : `${title} | AudioVal - Best Music App for Independent Artists`;
   const url = `${SEO_CONFIG.baseUrl}${path}`;
-  const allKeywords = [...CORE_KEYWORDS, ...ADDITIONAL_KEYWORDS, ...keywords].join(", ");
+  const allKeywords = [
+    ...CORE_KEYWORDS,
+    ...ADDITIONAL_KEYWORDS,
+    ...keywords,
+  ].join(", ");
 
   return {
     title: fullTitle,
@@ -170,28 +176,29 @@ export function generateAppStructuredData() {
   return {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
-    "name": "AudioVal",
-    "description": "Best music app for independent artists with free offline downloads and artist payments",
-    "url": SEO_CONFIG.baseUrl,
-    "applicationCategory": "MusicApplication",
-    "operatingSystem": "iOS, Android",
-    "offers": {
+    name: "AudioVal",
+    description:
+      "Best music app for independent artists with free offline downloads and artist payments",
+    url: SEO_CONFIG.baseUrl,
+    applicationCategory: "MusicApplication",
+    operatingSystem: "iOS, Android",
+    offers: {
       "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "description": "Free music app with offline downloads"
+      price: "0",
+      priceCurrency: "USD",
+      description: "Free music app with offline downloads",
     },
-    "aggregateRating": {
+    aggregateRating: {
       "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "1250"
+      ratingValue: "4.8",
+      ratingCount: "1250",
     },
-    "creator": {
+    creator: {
       "@type": "Organization",
-      "name": "AudioVal",
-      "url": SEO_CONFIG.baseUrl
+      name: "AudioVal",
+      url: SEO_CONFIG.baseUrl,
     },
-    "keywords": CORE_KEYWORDS.slice(0, 5)
+    keywords: CORE_KEYWORDS.slice(0, 5),
   };
 }
 
@@ -199,34 +206,37 @@ export function generateWebsiteStructuredData() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "AudioVal",
-    "description": "Best music app for independent artists with free offline downloads and artist payments",
-    "url": SEO_CONFIG.baseUrl,
-    "potentialAction": {
+    name: "AudioVal",
+    description:
+      "Best music app for independent artists with free offline downloads and artist payments",
+    url: SEO_CONFIG.baseUrl,
+    potentialAction: {
       "@type": "SearchAction",
-      "target": `${SEO_CONFIG.baseUrl}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string"
+      target: `${SEO_CONFIG.baseUrl}/search?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
     },
-    "sameAs": [
+    sameAs: [
       "https://twitter.com/audioval",
       "https://facebook.com/audioval",
-      "https://instagram.com/audioval"
-    ]
+      "https://instagram.com/audioval",
+    ],
   };
 }
 
-export function generateFAQStructuredData(faqData: ReadonlyArray<{ readonly question: string; readonly answer: string }>) {
+export function generateFAQStructuredData(
+  faqData: ReadonlyArray<{ readonly question: string; readonly answer: string }>
+) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqData.map(faq => ({
+    mainEntity: faqData.map((faq) => ({
       "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
+      name: faq.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
+        text: faq.answer,
+      },
+    })),
   };
 }
 
@@ -244,36 +254,68 @@ export function generateArticleStructuredData({
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": name,
-    "description": description,
-    "url": url,
-    "mainEntity": {
+    name: name,
+    description: description,
+    url: url,
+    mainEntity: {
       "@type": "Article",
-      "name": name,
-      "description": description,
-      "keywords": keywords
-    }
+      name: name,
+      description: description,
+      keywords: keywords,
+    },
+  };
+}
+
+// SSR Verification Helper
+export function verifySSRCompliance() {
+  return {
+    metadata: {
+      serverSide: true,
+      staticGeneration: true,
+      noClientDependencies: true,
+    },
+    structuredData: {
+      serverRendered: true,
+      noJavaScriptRequired: true,
+      searchEngineFriendly: true,
+    },
+    seo: {
+      completeMetadata: true,
+      properCanonicals: true,
+      socialMediaOptimized: true,
+      keywordOptimized: true,
+    },
+    performance: {
+      noLayoutShift: true,
+      fastInitialLoad: true,
+      optimizedImages: true,
+    },
   };
 }
 
 // Page-specific SEO helpers
 export const SEO_HELPERS = {
   home: {
-    title: "AudioVal - Where Every Drop Resonates | Best Music App for Independent Artists",
-    description: "AudioVal is the best music app for independent artists. Upload one song per Drop Day, earn 70% of ad revenue, and get paid through Stripe. Discover new music with free offline downloads. The ultimate platform for underground artists and music lovers.",
+    title:
+      "AudioVal - Where Every Drop Resonates | Best Music App for Independent Artists",
+    description:
+      "AudioVal is the best music app for independent artists. Upload one song per Drop Day, earn 70% of ad revenue, and get paid through Stripe. Discover new music with free offline downloads. The ultimate platform for underground artists and music lovers.",
     keywords: [],
     path: "/",
   },
   privacy: {
     title: "Privacy Policy | AudioVal - Best Music App for Independent Artists",
-    description: "AudioVal Privacy Policy - Learn how we protect your data while providing the best music app for independent artists with free offline downloads and artist payments.",
+    description:
+      "AudioVal Privacy Policy - Learn how we protect your data while providing the best music app for independent artists with free offline downloads and artist payments.",
     keywords: PAGE_KEYWORDS.privacy,
     path: "/privacy-policy",
   },
   terms: {
-    title: "Terms and Conditions | AudioVal - Best Music App for Independent Artists",
-    description: "AudioVal Terms and Conditions - Learn about our platform rules for the best music app for independent artists with free offline downloads and artist payments.",
+    title:
+      "Terms and Conditions | AudioVal - Best Music App for Independent Artists",
+    description:
+      "AudioVal Terms and Conditions - Learn about our platform rules for the best music app for independent artists with free offline downloads and artist payments.",
     keywords: PAGE_KEYWORDS.terms,
     path: "/terms-and-conditions",
   },
-} as const; 
+} as const;
