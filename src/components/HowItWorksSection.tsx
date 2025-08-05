@@ -2,13 +2,11 @@ import { ARTIST_FEATURES, CTA_TEXT, LISTENER_FEATURES, SECTION_TITLES } from "@/
 import Heading from "./Heading";
 import Text from "./Text";
 import { FeatureCard } from "./ui/feature-card";
-import { Container } from "./ui/container";
-import { memo } from "react";
 
-const HowItWorksSection = memo(() => {
+export default function HowItWorksSection() {
     return (
         <section className="relative py-4 sm:py-6 lg:py-8 xl:py-10 2xl:py-12 overflow-hidden">
-            <Container className="relative z-10">
+            <div className="relative z-10 container-responsive">
                 {/* Section Header */}
                 <div className="text-center mb-4 sm:mb-6 lg:mb-8 xl:mb-12 2xl:mb-16">
                     <Heading variant="h1" className="text-primary">
@@ -28,11 +26,7 @@ const HowItWorksSection = memo(() => {
                         {CTA_TEXT.submitSong}
                     </Text>
                 </div>
-            </Container>
+            </div>
         </section>
-    );
-});
-
-HowItWorksSection.displayName = "HowItWorksSection";
-
-export default HowItWorksSection;
+    )
+};

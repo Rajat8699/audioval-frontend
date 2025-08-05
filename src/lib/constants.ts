@@ -267,24 +267,3 @@ export const SOCIAL_LINKS = {
   twitter: "#",
   facebook: "#",
 } as const;
-
-// Support Features
-export const SUPPORT_FEATURES = [
-  "24/7 Customer Support",
-  "Comprehensive Documentation",
-  "Video Tutorials Available",
-] as const;
-
-// Video Data
-export const VIDEO_DATA = {
-  listeners: {
-    thumbnailUrl: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    title: "Watch how listeners discover amazing audio content",
-  },
-  artists: {
-    thumbnailUrl: "https://img.youtube.com/vi/jNQXAC9IVRw/maxresdefault.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
-    title: "Watch how audio creators grow their audience",
-  },
-} as const;

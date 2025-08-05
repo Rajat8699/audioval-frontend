@@ -1,6 +1,5 @@
 "use client";
 
-import { memo } from "react";
 import Heading from "@/components/Heading";
 import Text from "@/components/Text";
 import {
@@ -21,7 +20,7 @@ interface FAQSectionProps {
   className?: string;
 }
 
-const FAQSection = memo<FAQSectionProps>(({ title, faqData, className }) => {
+const FAQSection = ({ title, faqData, className }: FAQSectionProps) => {
   return (
     <section
       className={`relative py-4 sm:py-6 lg:py-8 xl:py-10 2xl:py-12 overflow-hidden ${className || ""
@@ -72,8 +71,6 @@ const FAQSection = memo<FAQSectionProps>(({ title, faqData, className }) => {
       </div>
     </section>
   );
-});
-
-FAQSection.displayName = "FAQSection";
+};
 
 export { FAQSection };

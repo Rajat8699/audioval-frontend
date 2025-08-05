@@ -100,7 +100,6 @@ export function generateMetadata({
   image?: string;
   imageAlt?: string;
   type?: "website" | "article";
-  structuredData?: Record<string, unknown>;
 }): Metadata {
   const fullTitle = title.includes("AudioVal")
     ? title
