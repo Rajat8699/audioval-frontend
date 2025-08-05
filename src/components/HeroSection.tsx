@@ -3,8 +3,9 @@ import Heading from "./Heading";
 import Text from "./Text";
 import { AppStoreButton } from "./ui/app-store-button";
 import Image from "next/image";
+import { memo } from "react";
 
-export default function HeroSection() {
+const HeroSection = memo(() => {
     return (
         <section className="relative overflow-hidden">
             <div className="relative z-10 px-3 sm:px-4 lg:px-6 xl:px-8 2xl:px-12 py-8 sm:py-12 lg:py-16 xl:py-20 2xl:py-24 flex items-center justify-center min-h-[80vh]">
@@ -35,7 +36,7 @@ export default function HeroSection() {
                         </div>
                     </div>
 
-                    {/* Right side - Person with Music Icons */}
+                    {/* Right side - Hero Image */}
                     <div className="flex justify-center lg:justify-end">
                         <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl">
                             <div className="relative z-10">
@@ -54,5 +55,9 @@ export default function HeroSection() {
                 </div>
             </div>
         </section>
-    )
-};
+    );
+});
+
+HeroSection.displayName = "HeroSection";
+
+export default HeroSection;

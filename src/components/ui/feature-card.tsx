@@ -36,23 +36,26 @@ const FeatureCard = memo<FeatureCardProps>(
         </CardHeader>
         <Separator className="px-0.5 sm:px-1 lg:px-2" />
         <CardContent className="px-0.5 sm:px-1 lg:px-2">
-          {/* Bullet Points */}
-          <div className="space-y-1 sm:space-y-1.5 lg:space-y-2">
+          {/* Feature List */}
+          <ul className="space-y-1 sm:space-y-1.5 lg:space-y-2" role="list">
             {features.map((feature, index) => (
-              <div
+              <li
                 key={index}
                 className="flex items-start gap-1 sm:gap-1.5 lg:gap-2"
               >
-                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                <div
+                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full mt-1.5 sm:mt-2 flex-shrink-0"
+                  aria-hidden="true"
+                />
                 <Text
                   variant="text"
                   className="text-sm sm:text-base lg:text-lg text-gray-300"
                 >
                   {feature}
                 </Text>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
 
           {/* Video Section */}
           {videoUrl && (

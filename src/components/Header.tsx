@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ASSETS } from "@/lib/constants";
+import { Container } from "./ui/container";
+import { memo } from "react";
 
-export default function Header() {
+const Header = memo(() => {
   return (
     <header className="bg-black py-5 relative z-10 shadow-md shadow-primary/10">
-      <div className="container-responsive">
+      <Container>
         <div className="flex justify-center">
           <Link href="/">
             <Image
@@ -19,7 +21,11 @@ export default function Header() {
             />
           </Link>
         </div>
-      </div>
+      </Container>
     </header>
   );
-}
+});
+
+Header.displayName = "Header";
+
+export default Header;

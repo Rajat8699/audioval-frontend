@@ -8,6 +8,7 @@ import { generateMetadata, SEO_HELPERS, generateWebsiteStructuredData, generateF
 import HowItWorksSection from "@/components/HowItWorksSection";
 import HeroSection from "@/components/HeroSection";
 import BackgroundBlobs from "@/components/BackgroundBlobs";
+import { memo } from "react";
 
 export const metadata: Metadata = generateMetadata({
   title: SEO_HELPERS.home.title,
@@ -15,6 +16,19 @@ export const metadata: Metadata = generateMetadata({
   keywords: SEO_HELPERS.home.keywords,
   path: SEO_HELPERS.home.path,
 });
+
+// Memoized background section for better performance
+const BackgroundSection = memo(() => (
+  <div
+    className="px-3 sm:px-4 lg:px-6 xl:px-8 2xl:px-12 pt-2 sm:pt-4 lg:pt-6 xl:pt-8 2xl:pt-12 bg-[url('/assets/backGrid.png')] bg-cover bg-center"
+    style={{ backgroundPosition: "center -70px" }}
+  >
+    <HowItWorksSection />
+    <FAQSection title={SECTION_TITLES.faq} faqData={FAQ_DATA} />
+  </div>
+));
+
+BackgroundSection.displayName = "BackgroundSection";
 
 export default function Home() {
   return (
@@ -38,13 +52,7 @@ export default function Home() {
       <main className="min-h-screen flex flex-col relative overflow-hidden">
         <BackgroundBlobs />
         <HeroSection />
-        <div
-          className="px-3 sm:px-4 lg:px-6 xl:px-8 2xl:px-12 pt-2 sm:pt-4 lg:pt-6 xl:pt-8 2xl:pt-12 bg-[url('/assets/backGrid.png')] bg-cover bg-center"
-          style={{ backgroundPosition: "center -70px" }}
-        >
-          <HowItWorksSection />
-          <FAQSection title={SECTION_TITLES.faq} faqData={FAQ_DATA} />
-        </div>
+        <BackgroundSection />
       </main>
     </>
   );
