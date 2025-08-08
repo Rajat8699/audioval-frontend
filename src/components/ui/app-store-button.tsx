@@ -26,9 +26,9 @@ const AppStoreButton = ({
 
   const getStoreIcon = () => {
     if (platform === "google") {
-      return <GooglePlayIcon />;
+      return <GooglePlayIcon className="w-4 h-4 sm:w-5 sm:h-5" />;
     } else {
-      return <AppStoreIcon />;
+      return <AppStoreIcon className="w-4 h-4 sm:w-5 sm:h-5" />;
     }
   };
 
@@ -36,15 +36,15 @@ const AppStoreButton = ({
     if (platform === "google") {
       return (
         <div className="flex flex-col items-start">
-          <span className="text-xs text-muted-foreground">GET IT ON</span>
-          <span className="text-sm font-semibold">Google Play</span>
+          <span className="text-[10px] sm:text-xs text-muted-foreground">GET IT ON</span>
+          <span className="text-xs sm:text-sm font-semibold">Google Play</span>
         </div>
       );
     } else {
       return (
         <div className="flex flex-col items-start">
-          <span className="text-xs text-muted-foreground">Download on the</span>
-          <span className="text-sm font-semibold">App Store</span>
+          <span className="text-[10px] sm:text-xs text-muted-foreground">Download on the</span>
+          <span className="text-xs sm:text-sm font-semibold">App Store</span>
         </div>
       );
     }
@@ -55,7 +55,10 @@ const AppStoreButton = ({
       asChild
       variant={variant}
       size={size}
-      className={cn("gap-3 p-6", className)}
+      className={cn(
+        "gap-2 sm:gap-3 p-3 sm:p-4 md:p-6 text-xs sm:text-sm",
+        className
+      )}
     >
       <Link href={finalHref} target="_blank" rel="noopener noreferrer">
         {getStoreIcon()}
