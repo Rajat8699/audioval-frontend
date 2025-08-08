@@ -256,14 +256,22 @@ export const ASSETS = {
   heroImage: "/assets/HeroImage.png",
   backGrid: "/assets/backGrid.png",
   appleStore: "/assets/applestore.png",
-  playStore: "/assets/playstore.png",
+  playStore: "/assets/playstore1.svg",
+} as const;
+
+// App Store Links
+export const APP_STORE_LINKS = {
+  apple: "https://apps.apple.com/app/audioval",
+  google: "https://play.google.com/store/apps/details?id=com.audioval.app",
 } as const;
 
 // Social Media Links (placeholder URLs)
 export const SOCIAL_LINKS = {
-  youtube: "#",
-  discord: "#",
-  pinterest: "#",
-  twitter: "#",
-  facebook: "#",
+  instagram:
+    "https://www.instagram.com/audiovalmusic/profilecard/?igsh=eTc4Y3JldjluNjNm",
+  youtube: "https://youtube.com/@audiovalmusic?si=dx5N_vqltuOm-WoG",
+  tiktok: "https://www.tiktok.com/@audiovalmusic?_t=ZP-8yhHPClkwQg&_r=1",
+  reddit: "https://www.reddit.com/u/Audioval/s/3nKTnIWLSE",
+  x: "https://x.com/audiovalmusic?s=21",
+  facebook: "https://www.facebook.com/share/1CKcohZBZC/?mibextid=wwXIfr",
 } as const;
