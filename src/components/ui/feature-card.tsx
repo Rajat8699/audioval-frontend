@@ -33,7 +33,7 @@ const FeatureCard = ({
         </Heading>
       </CardHeader>
       <Separator className="px-0.5 sm:px-1 lg:px-2" />
-      <CardContent className="px-0.5 sm:px-1 lg:px-2">
+      <CardContent className="px-0.5 sm:px-1 lg:px-2 flex flex-col h-full justify-between">
         {/* Bullet Points */}
         <div className="space-y-1 sm:space-y-1.5 lg:space-y-2">
           {features.map((feature, index) => (

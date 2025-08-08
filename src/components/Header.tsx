@@ -4,7 +4,7 @@ import { ASSETS } from "@/lib/constants";
 
 export default function Header() {
   return (
-    <header className="bg-black py-5 relative z-10 shadow-md shadow-primary/10">
+    <header className="bg-black py-2 relative z-10 shadow-md shadow-primary/10">
       <div className="container-responsive">
         <div className="flex justify-center">
           <Link href="/">
